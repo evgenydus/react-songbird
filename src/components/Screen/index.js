@@ -1,6 +1,7 @@
 import React from 'react';
 import Options from './Options';
 import Info from './Info';
+import './index.css'
 
 const Screen = () => {
   return (

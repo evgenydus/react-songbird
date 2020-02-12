@@ -1,0 +1,31 @@
+.info {
+  background-color: #d8e0fe;
+  border-radius: 5px;
+  padding: 20px 30px 20px 20px;
+}
+
+.info-image {
+  display: inline-block;
+  margin-right: 25px;
+  max-width: 200px;
+}
+
+.info-data-container {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+
+.info-name {
+  font-size: 30px;
+}
+
+.latin-name {
+  border-bottom: 1px solid rgba(1, 20, 159, .5);
+  border-top: 1px solid rgba(1, 20, 159, .5);
+  font-size: 20px;
+}
+
+.description {
+  text-align: justify;
+}

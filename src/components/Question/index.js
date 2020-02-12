@@ -1,10 +1,12 @@
 import React from 'react';
 import Details from './Details';
+import './index.css'
+import unknownBird from '../../assets/images/unknown-bird.jpg'
 
 const Question = () => {
   return (
-    <div className="question">Question
-      <div className="question-image">Image</div>
+    <div className="question">
+      <img className="question-image" src={unknownBird} alt='' />
       <Details />
     </div>
   )

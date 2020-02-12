@@ -1,13 +1,18 @@
 import React from 'react';
 import Player from '../../Player';
+import './index.css'
+/*Temporary image*/
+import unknownBird from '../../../assets/images/unknown-bird.jpg'
 
 const Info = () => {
   return (
     <div className="info">
-      <div className="info-image">image</div>
-      <div className="info-name">name</div>
-      <div className="latin-name">latin-name</div>
-      <div className="info-player">
+      <img className="info-image" src={unknownBird} alt="" />
+      <div className="info-data-container">
+        <div className="info-name">Ворон</div>
+        <div className="latin-name">latin-name</div>
+        <div className="info-player">
+      </div>
         <Player />
       </div>
       <div className="description">desc</div>

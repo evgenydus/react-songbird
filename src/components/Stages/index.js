@@ -1,14 +1,17 @@
 import React from 'react';
+import './index.css'
 
 const Stages = () => {
   return (
     <div className="stages">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
+      <ul className="stages-list">
+        <li className="stage">Разминка</li>
+        <li className="stage">Воробьиные</li>
+        <li className="stage">Лесные птицы</li>
+        <li className="stage">Певчие птицы</li>
+        <li className="stage">Хищные птицы</li>
+        <li className="stage">Морские птицы</li>
+      </ul>
     </div>
   )
 };

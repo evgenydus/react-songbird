@@ -1,0 +1,9 @@
+.question-details {
+  margin-left: 30px;
+  width: 100%;
+}
+
+.details-answer {
+  border-bottom: 1px solid rgba(1, 20, 159, .5);
+  font-size: 40px;
+}

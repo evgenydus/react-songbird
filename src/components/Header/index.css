@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+.logo {
+  max-width: 150px;
+}
+
+.score {
+  font-size: 35px;
+}

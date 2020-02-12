@@ -13,7 +13,7 @@ const App = () => {
       <Stages />
       <Question />
       <Screen />
-      <button className="button-next button-green">Next Level</button>
+      <button className="button-next button-green">Next level</button>
     </div>
   );
 };
