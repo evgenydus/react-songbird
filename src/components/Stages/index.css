@@ -16,3 +16,14 @@
   padding-top: 5px;
   text-align: center;
 }
+
+.current-stage {
+  background-color: #386af8;
+  border-radius: 5px;
+  color: #fff;
+  flex-basis: 100%;
+  font-size: 18px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-align: center;
+}

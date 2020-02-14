@@ -3,10 +3,11 @@ import Options from './Options';
 import Info from './Info';
 import './index.css'
 
-const Screen = () => {
+const Screen = (props) => {
+
   return (
     <div className="screen">
-      <Options />
+      <Options birds={props.birds} />
       <Info />
     </div>
   )

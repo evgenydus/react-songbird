@@ -2,10 +2,10 @@ import React from 'react';
 import Player from '../../Player';
 import './index.css'
 
-const Details = () => {
+const Details = (props) => {
   return (
     <div className="question-details">
-      <div className="details-answer">Ворон</div>
+      <div className="details-answer">{props.birdData.name}</div>
       <div className="details-player">
         <Player />
       </div>

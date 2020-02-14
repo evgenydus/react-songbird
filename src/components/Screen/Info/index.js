@@ -5,11 +5,12 @@ import './index.css'
 import unknownBird from '../../../assets/images/unknown-bird.jpg'
 
 const Info = () => {
+
   return (
     <div className="info">
       <img className="info-image" src={unknownBird} alt="" />
       <div className="info-data-container">
-        <div className="info-name">Ворон</div>
+        <div className="info-name">Name</div>
         <div className="latin-name">latin-name</div>
         <div className="info-player">
       </div>

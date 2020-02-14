@@ -3,11 +3,11 @@ import Details from './Details';
 import './index.css'
 import unknownBird from '../../assets/images/unknown-bird.jpg'
 
-const Question = () => {
+const Question = (props) => {
   return (
     <div className="question">
       <img className="question-image" src={unknownBird} alt='' />
-      <Details />
+      <Details birdData={props.birds} />
     </div>
   )
 };

@@ -1,16 +1,28 @@
 import React from 'react';
 import './index.css'
 
-const Stages = () => {
+const Stages = (props) => {
+
+  const showCurrentStage = () => {
+    return(
+      props.stages.map((stage, index) => {
+        if (index === props.currentStage) {
+          return (
+            <li className="current-stage" key={index}>{stage}</li>
+          )
+        } else {
+          return (
+            <li className="stage" key={index}>{stage}</li>
+          )
+        }
+      })
+    )
+  };
+
   return (
     <div className="stages">
       <ul className="stages-list">
-        <li className="stage">Разминка</li>
-        <li className="stage">Воробьиные</li>
-        <li className="stage">Лесные птицы</li>
-        <li className="stage">Певчие птицы</li>
-        <li className="stage">Хищные птицы</li>
-        <li className="stage">Морские птицы</li>
+        {showCurrentStage()}
       </ul>
     </div>
   )

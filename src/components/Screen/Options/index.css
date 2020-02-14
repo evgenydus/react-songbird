@@ -1,4 +1,8 @@
 .options {
   background-color: #d8e0fe;
   border-radius: 5px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+

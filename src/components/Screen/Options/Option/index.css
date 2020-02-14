@@ -1,0 +1,19 @@
+.option {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #68B2F9;
+}
+
+.option-indicator {
+  background-color: #b7c4ff;
+  border-radius: 100%;
+  height: 10px;
+  margin-right: 25px;
+  width: 10px;
+}
