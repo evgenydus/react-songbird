@@ -3,13 +3,19 @@ import React from 'react';
 import Details from './Details';
 
 import './index.css'
-import unknownBird from '../../assets/images/unknown-bird.jpg'
+import unknownImageUrl from '../../assets/images/unknown-bird.jpg'
 
-const Question = ({ birds }) => {
+const Question = (props) => {
+  const { isStageCompleted, option } = props;
+
   return (
     <div className="question">
-      <img className="question-image" src={unknownBird} alt='' />
-      <Details birdData={birds} />
+      <img
+        alt=''
+        className="question-image"
+        src={isStageCompleted ? option.imageUrl : unknownImageUrl}
+      />
+      <Details {...props} />
     </div>
   )
 };

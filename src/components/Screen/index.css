@@ -5,9 +5,10 @@
 }
 
 .options {
-  flex-basis: 47%;
+  flex-basis: 48%;
 }
 
 .info {
-  flex-basis: 47%;
+  flex-basis: 45%;
+  margin-left: 20px;
 }

@@ -1,10 +1,12 @@
 .info {
   background-color: #d8e0fe;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 2px #b8c6fb;
   padding: 20px 30px 20px 20px;
 }
 
 .info-image {
+  border-radius: 10px;
   display: inline-block;
   margin-right: 25px;
   max-width: 200px;
@@ -24,6 +26,8 @@
   border-bottom: 1px solid rgba(1, 20, 159, .5);
   border-top: 1px solid rgba(1, 20, 159, .5);
   font-size: 20px;
+  padding-left: 2px;
+  padding-top: 4px;
 }
 
 .description {

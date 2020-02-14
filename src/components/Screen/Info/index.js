@@ -15,7 +15,7 @@ const Info = () => {
         <div className="latin-name">latin-name</div>
         <div className="info-player">
       </div>
-        <Player />
+        {/*<Player />*/}
       </div>
       <div className="description">desc</div>
     </div>

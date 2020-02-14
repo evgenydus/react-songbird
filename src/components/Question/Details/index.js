@@ -4,12 +4,16 @@ import Player from '../../Player';
 
 import './index.css'
 
-const Details = ({ birdData }) => { //TODO: Why cant do this way { birdData: { name, audio } }?
+const hiddenName = '******';
+
+const Details = ({ isStageCompleted, option }) => {
   return (
     <div className="question-details">
-      <div className="details-answer">{birdData.name}</div>
+      <div className="details-answer">
+        {isStageCompleted ? option.name : hiddenName}
+      </div>
       <div className="details-player">
-        <Player />
+        {<Player audioUrl={option.audioUrl}/>}
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 .stages-list{
   background-color: #0082fc;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 2px #b8c6fb;
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -10,6 +11,7 @@
 
 .stage {
   color: #fff;
+  cursor: default;
   flex-basis: 100%;
   font-size: 18px;
   padding-bottom: 5px;
@@ -19,8 +21,9 @@
 
 .current-stage {
   background-color: #386af8;
-  border-radius: 5px;
+  border-radius: 10px;
   color: #fff;
+  cursor: default;
   flex-basis: 100%;
   font-size: 18px;
   padding-bottom: 5px;
