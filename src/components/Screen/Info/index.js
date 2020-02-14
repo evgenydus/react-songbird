@@ -1,11 +1,12 @@
 import React from 'react';
+
 import Player from '../../Player';
+
 import './index.css'
 /*Temporary image*/
 import unknownBird from '../../../assets/images/unknown-bird.jpg'
 
 const Info = () => {
-
   return (
     <div className="info">
       <img className="info-image" src={unknownBird} alt="" />

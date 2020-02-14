@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
-import './index.css'
+import React from 'react';
+
 import Option from './Option';
 
-const Options = (props) => {
+import './index.css'
 
+const Options = ({ birds }) => {
   return (
     <ul className="options">
-      {props.birds.map((bird) => {
+      {birds.map(({ id, name }) => {
         return <Option
-          name={bird.name}
-          key={bird.id} />
+          name={name}
+          key={id} />
         }
       )}
     </ul>

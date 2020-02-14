@@ -1,13 +1,15 @@
 import React from 'react';
-import Options from './Options';
+
 import Info from './Info';
+import Options from './Options';
+
 import './index.css'
 
-const Screen = (props) => {
+const Screen = ({ birds }) => {
 
   return (
     <div className="screen">
-      <Options birds={props.birds} />
+      <Options birds={birds} />
       <Info />
     </div>
   )

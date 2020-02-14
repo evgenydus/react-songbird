@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-import './index.css';
+
 import Header from '../Header';
-import Stages from '../Stages';
 import Question from '../Question';
 import Screen from '../Screen';
+import Stages from '../Stages';
+
+import './index.css';
 import birdsData from '../../birds-data';
 import stages from '../Stages/stages';
 import { getRandomNumber } from '../../helpers/utils';
 
 
 const App = () => {
-  const [ currentStage, setStage ] = useState(0);
+  const defaultStage = 0;
+  const [currentStage, setStage] = useState(defaultStage);
+
+  const defaultBirdName = '*****';
+  const [questionBirdName, setQuestionBirdName] = useState(defaultBirdName);
+
   let birds = birdsData[currentStage].slice();
-  const [ questionBirdName, setQuestionBirdName ] = useState('*****');
 
   const revomeUsedBird = (birdsArray, id) => {
     birdsArray = birdsArray.filter(bird => bird.id !== id);
@@ -23,10 +29,10 @@ const App = () => {
   return (
     <div className="app-container">
       <Header />
-      <Stages stages={stages} currentStage={currentStage}/>
+      <Stages currentStage={currentStage} stages={stages} />
       <Question birds={birds[getRandomNumber(birds.length)]} />
       <Screen birds={birdsData[currentStage]} />
-      <button className="button-next button-blue">Next level</button>
+      <button className="button-blue button-next">Next level</button>
     </div>
   );
 };

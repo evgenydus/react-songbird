@@ -1,12 +1,13 @@
 import React from 'react';
+
 import './index.css'
 
-const Stages = (props) => {
+const Stages = ({ currentStage, stages }) => {
 
   const showCurrentStage = () => {
     return(
-      props.stages.map((stage, index) => {
-        if (index === props.currentStage) {
+      stages.map((stage, index) => {
+        if (index === currentStage) {
           return (
             <li className="current-stage" key={index}>{stage}</li>
           )

@@ -1,13 +1,11 @@
 import React from 'react';
 
-class Score extends React.Component {
-  render() {
+const Score = () => {
     return (
       <span>
         Score: {score}
       </span>
     )
-  }
-}
+};
 
-export default Score
+export default Score;
