@@ -1,11 +1,15 @@
 import React from 'react';
 import './index.css'
 
-const Option = (props) => {
+const Option = ({ name, setChosenOptionId, id }) => {
+  const handleOptionClick = ({ currentTarget: {id} }) => {
+    setChosenOptionId(id)
+  };
+
   return (
-    <li className="option">
+    <li className="option" onClick={handleOptionClick} id={id}>
       <div className="option-indicator" />
-      <span className="option-text" /*onClick={}*/>{props.name}</span>
+      <span className="option-text" >{name}</span>
     </li>
   )
 };

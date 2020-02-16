@@ -4,15 +4,14 @@ import Option from './Option';
 
 import './index.css'
 
-const Options = ({ birds }) => {
+const Options = ({ options, setChosenOptionId }) => {
   return (
     <ul className="options">
-      {birds.map(({ id, name }) => {
-        return <Option
-          name={name}
-          key={id} />
-        }
-      )}
+      {options.map(({ id, name }) => {
+        return (
+          <Option key={id} name={name} setChosenOptionId={setChosenOptionId} id={id} />
+        )
+      })}
     </ul>
   )
 };

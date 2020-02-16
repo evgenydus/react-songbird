@@ -5,12 +5,12 @@ import Options from './Options';
 
 import './index.css'
 
-const Screen = ({ birds }) => {
+const Screen = ({ chosenOptionId, options, setChosenOptionId }) => {
 
   return (
     <div className="screen">
-      <Options birds={birds} />
-      <Info />
+      <Options options={options} setChosenOptionId={setChosenOptionId} />
+      <Info chosenOptionId={chosenOptionId} options={options} />
     </div>
   )
 };

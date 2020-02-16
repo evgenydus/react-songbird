@@ -5,31 +5,9 @@
   padding: 20px 30px 20px 20px;
 }
 
-.info-image {
-  border-radius: 10px;
-  display: inline-block;
-  margin-right: 25px;
-  max-width: 200px;
-}
-
-.info-data-container {
-  display: inline-block;
-  vertical-align: top;
-  width: 50%;
-}
-
-.info-name {
-  font-size: 30px;
-}
-
-.latin-name {
-  border-bottom: 1px solid rgba(1, 20, 159, .5);
-  border-top: 1px solid rgba(1, 20, 159, .5);
-  font-size: 20px;
-  padding-left: 2px;
-  padding-top: 4px;
-}
-
-.description {
-  text-align: justify;
+.info-placeholder {
+  font-size: 35px;
+  margin-top: 45px;
+  text-align: center;
+  vertical-align: middle;
 }

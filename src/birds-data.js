@@ -319,6 +319,6 @@ const stages = [
     },
 ];
 
-export default { stages };
+export default stages;
 
 

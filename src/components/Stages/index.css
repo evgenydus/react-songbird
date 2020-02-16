@@ -1,5 +1,5 @@
 .stages-list{
-  background-color: #0082fc;
+  background-color: #0082fc; /*#957436*/
   border-radius: 10px;
   box-shadow: 0 1px 3px 2px #b8c6fb;
   display: flex;
@@ -14,13 +14,13 @@
   cursor: default;
   flex-basis: 100%;
   font-size: 18px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   text-align: center;
 }
 
 .current-stage {
-  background-color: #386af8;
+  background-color: #386af8; /*#d1a541*/
   border-radius: 10px;
   color: #fff;
   cursor: default;

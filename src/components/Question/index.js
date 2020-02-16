@@ -3,7 +3,7 @@ import React from 'react';
 import Details from './Details';
 
 import './index.css'
-import unknownImageUrl from '../../assets/images/unknown-bird.jpg'
+import unknownImageUrl from '../../assets/images/unknown-bird.png'
 
 const Question = (props) => {
   const { isStageCompleted, option } = props;

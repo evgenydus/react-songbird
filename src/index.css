@@ -1,9 +1,9 @@
 body {
-  background-color: #fffaf0;
-  font-family: 'El Messiri', sans-serif;
+  background-color: #fffaf0; /*#f0ce8b*/
+  font-family: 'Open Sans', sans-serif;
   margin: 0 auto;
   max-width: 1150px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 

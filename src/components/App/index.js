@@ -16,12 +16,18 @@ const App = () => {
   const randomOptionIndex = getRandomNumber(stageOptions.length - 1);
   const randomOption = stageOptions[randomOptionIndex];
 
+  const [chosenOptionId, setChosenOptionId] = useState(0);
+
   return (
     <div className="app-container">
       <Header />
       <Stages stages={stages} />
       <Question isStageCompleted={false} option={randomOption} />
-      <Screen options={stageOptions} />
+      <Screen
+        chosenOptionId={chosenOptionId}
+        options={stageOptions}
+        setChosenOptionId={setChosenOptionId}
+      />
       <button className="button-blue button-next">Next level</button>
     </div>
   );

@@ -1,23 +1,22 @@
 import React from 'react';
 
+import InfoDetails from './InfoDetails/InfoDetails';
 import Player from '../../Player';
 
 import './index.css'
-/*Temporary image*/
-import unknownBird from '../../../assets/images/unknown-bird.jpg'
 
-const Info = () => {
+
+const Info = ({ chosenOptionId, options }) => {
+
   return (
     <div className="info">
-      <img className="info-image" src={unknownBird} alt="" />
-      <div className="info-data-container">
-        <div className="info-name">Name</div>
-        <div className="latin-name">latin-name</div>
-        <div className="info-player">
-      </div>
-        {/*<Player />*/}
-      </div>
-      <div className="description">desc</div>
+      {chosenOptionId > 0 ? (
+        <InfoDetails chosenOptionId={chosenOptionId} options={options} />
+      ) : (
+        <p className="info-placeholder">
+          Прослушайте аудио и выберите птицу, которая поет на записи
+        </p>
+      )}
     </div>
   )
 };
