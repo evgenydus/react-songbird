@@ -1,16 +1,14 @@
 import React from 'react';
 
 import InfoDetails from './InfoDetails/InfoDetails';
-import Player from '../../Player';
 
 import './index.css'
 
-const Info = ({ selectedOptionId, options }) => {
-  const selectedOption = options.find(option => option.id === selectedOptionId) || {};
+const Info = ({ selectedOption }) => {
 
   return (
     <div className="info">
-      {selectedOptionId ? (
+      {selectedOption ? (
         <InfoDetails selectedOption={selectedOption} />
       ) : (
         <p className="info-placeholder">

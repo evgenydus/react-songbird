@@ -5,13 +5,19 @@ import Options from './Options';
 
 import './index.css'
 
-const Screen = ({ options }) => {
+const Screen = ({ addId, options, selectedOptionIds }) => {
   const [selectedOptionId, setSelectedOptionId] = useState(null);
+  const selectedOption = options.find(option => option.id === selectedOptionId);
 
   return (
     <div className="screen">
-      <Options options={options} onOptionClick={setSelectedOptionId} />
-      <Info options={options} selectedOptionId={selectedOptionId}/>
+      <Options
+        addId={addId}
+        options={options}
+        onOptionClick={setSelectedOptionId}
+        selectedOptionIds={selectedOptionIds}
+      />
+      <Info selectedOption={selectedOption} />
     </div>
   )
 };

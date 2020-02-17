@@ -1,14 +1,15 @@
 import React, {useCallback} from 'react';
 import './index.css'
 
-const Option = ({ name, onClick, id }) => {
+const Option = ({ addId, id, isCorrectAnswer, isSelected, name, onClick }) => {
   const handleClick = useCallback(() => {
-    onClick(id)
-  }, [onClick, id]);
+    onClick(id);
+    addId(id)
+  }, [addId, id, onClick]);
 
   return (
     <li className="option" onClick={handleClick} >
-      <div className="option-indicator" />
+      <div className={`option-indicator ${isSelected ? 'indicator-selected' : 'indicator-default'}`} />
       <span className="option-text" >{name}</span>
     </li>
   )

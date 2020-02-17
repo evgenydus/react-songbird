@@ -20,10 +20,20 @@
 }
 
 .option-indicator {
-  background-color: #b7c4ff;
   border-radius: 100%;
   height: 10px;
   margin-right: 25px;
   width: 10px;
 }
 
+.indicator-answer {
+  background-color: #62ff4f;
+}
+
+.indicator-default {
+  background-color: #b7c4ff;
+}
+
+.indicator-selected {
+  background-color: #ff4c4c;
+}

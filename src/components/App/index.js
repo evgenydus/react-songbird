@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 
 import Header from '../Header';
 import Question from '../Question';
@@ -15,13 +15,21 @@ const App = () => {
   const randomOptionIndex = getRandomNumber(stageOptions.length - 1);
   const randomOption = stageOptions[randomOptionIndex];
 
+  const [selectedOptionIds, setSelectedOptionIds] = useState([]);
+
+  const addId = (id) => {
+    setSelectedOptionIds([...selectedOptionIds, id])
+  };
+
   return (
     <div className="app-container">
       <Header />
       <Stages stages={stages} />
       <Question isStageCompleted={false} option={randomOption} />
       <Screen
+        addId={addId}
         options={stageOptions}
+        selectedOptionIds={selectedOptionIds}
       />
       <button className="button-blue button-next">Next level</button>
     </div>
