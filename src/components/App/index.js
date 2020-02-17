@@ -9,14 +9,11 @@ import './index.css';
 import stages from '../../birds-data';
 import { getRandomNumber } from '../../helpers/utils';
 
-
 const App = () => {
   const currentStageIndex = 0;
   const stageOptions = stages[currentStageIndex].options;
   const randomOptionIndex = getRandomNumber(stageOptions.length - 1);
   const randomOption = stageOptions[randomOptionIndex];
-
-  const [chosenOptionId, setChosenOptionId] = useState(0);
 
   return (
     <div className="app-container">
@@ -24,9 +21,7 @@ const App = () => {
       <Stages stages={stages} />
       <Question isStageCompleted={false} option={randomOption} />
       <Screen
-        chosenOptionId={chosenOptionId}
         options={stageOptions}
-        setChosenOptionId={setChosenOptionId}
       />
       <button className="button-blue button-next">Next level</button>
     </div>
@@ -34,5 +29,3 @@ const App = () => {
 };
 
 export default App;
-
-// Lifecycles

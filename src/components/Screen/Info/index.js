@@ -5,13 +5,13 @@ import Player from '../../Player';
 
 import './index.css'
 
-
-const Info = ({ chosenOptionId, options }) => {
+const Info = ({ selectedOptionId, options }) => {
+  const selectedOption = options.find(option => option.id === selectedOptionId) || {};
 
   return (
     <div className="info">
-      {chosenOptionId > 0 ? (
-        <InfoDetails chosenOptionId={chosenOptionId} options={options} />
+      {selectedOptionId ? (
+        <InfoDetails selectedOption={selectedOption} />
       ) : (
         <p className="info-placeholder">
           Прослушайте аудио и выберите птицу, которая поет на записи

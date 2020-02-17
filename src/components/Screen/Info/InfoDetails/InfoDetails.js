@@ -2,8 +2,8 @@ import React from 'react';
 
 import './index.css'
 
-const InfoDetails = ({ chosenOptionId, options }) => {
-  const { name, species, description, imageUrl, audioUrl } = options[chosenOptionId - 1];
+const InfoDetails = ({ selectedOption }) => {
+  const { name, species, description, imageUrl } = selectedOption;
 
   return (
     <div>
@@ -13,7 +13,7 @@ const InfoDetails = ({ chosenOptionId, options }) => {
         <div className="latin-name">{species}</div>
         <div className="info-player">
         </div>
-        {/*<Player />*/}
+        {/*TODO: Implement component <Player />*/}
       </div>
       <div className="description">{description}</div>
     </div>
