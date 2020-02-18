@@ -1,0 +1,12 @@
+.options {
+  background-color: #d8e0fe;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 2px #b8c6fb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+

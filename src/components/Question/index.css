@@ -1,0 +1,15 @@
+.question {
+  background-color: #d8e0fe; /*#b4904e*/
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 2px #b8c6fb; /*#000*/
+  display: flex;
+  margin-top: 20px;
+  padding: 15px 75px 15px 20px;
+}
+
+.question-image {
+  border: 1px solid #0082fc;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 1px #a8b8f4;
+  max-width: 200px;
+}

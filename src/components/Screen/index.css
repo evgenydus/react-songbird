@@ -1,0 +1,14 @@
+.screen {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.options {
+  flex-basis: 49%;
+}
+
+.info {
+  flex-basis: 45%;
+  margin-left: 20px;
+}
