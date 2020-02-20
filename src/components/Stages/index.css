@@ -1,7 +1,5 @@
 .stages-list{
-  background-color: #0082fc; /*#957436*/
-  border-radius: 10px;
-  box-shadow: 0 1px 3px 2px #b8c6fb;
+  background-color: #525ca1;
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -20,7 +18,7 @@
 }
 
 .current-stage {
-  background-color: #386af8; /*#d1a541*/
+  background-color: #0D1362;
   border-radius: 10px;
   color: #fff;
   cursor: default;

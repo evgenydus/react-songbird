@@ -1,17 +1,16 @@
 .info {
   background-color: #d8e0fe;
-  border-radius: 10px;
-  box-shadow: 0 1px 3px 2px #b8c6fb;
-  padding: 20px 30px 20px 20px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
   height: 270px;
+  padding: 20px 30px 20px 20px;
 }
 
 .info-placeholder {
   font-size: 35px;
-  top: 50%;
-  text-align: center;
-  vertical-align: middle;
-  transform: translateY(-50%);
-  position: relative;
   margin: 0;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
 }

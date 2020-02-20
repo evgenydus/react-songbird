@@ -1,10 +1,15 @@
 .button-next {
+  background-color: #acb9bc;
   border-radius: 10px;
   border: 0;
-  box-shadow: 0 1px 3px 2px #9d9ea3;
+  color: #fff;
+  font-size: 18px;
   margin-top: 20px;
-  opacity: .5;
   padding-bottom: 10px;
   padding-top: 10px;
   width: 100%;
+}
+
+.button-green {
+  background-color: #5fc696;
 }

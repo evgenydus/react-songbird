@@ -1,7 +1,6 @@
 .info-image {
   border-radius: 10px;
-  border: 1px solid #0082fc;
-  box-shadow: 0 0 5px 1px #a8b8f4;
+  border: 1px solid #525ca1;
   display: inline-block;
   height: 140px;
   margin-right: 25px;
@@ -20,8 +19,8 @@
 }
 
 .latin-name {
-  border-bottom: 1px solid rgba(1, 20, 159, .5);
-  border-top: 1px solid rgba(1, 20, 159, .5);
+  border-bottom: 1px solid #525ca1;
+  border-top: 1px solid #525ca1;
   font-size: 20px;
   padding-left: 2px;
   padding-top: 4px;
