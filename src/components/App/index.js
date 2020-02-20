@@ -30,10 +30,11 @@ const App = () => {
       <Question isStageCompleted={isCorrectAnswer} option={randomOption} />
       <Screen
         addId={addId}
+        isCorrectAnswer={isCorrectAnswer}
         options={stageOptions}
         selectedOptionIds={selectedOptionIds}
       />
-      <button className="button-blue button-next">Next level</button>
+      <button className="button-green button-next">Следующий уровень</button>
     </div>
   );
 };
