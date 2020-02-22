@@ -34,7 +34,9 @@ const App = () => {
         options={stageOptions}
         selectedOptionIds={selectedOptionIds}
       />
-      <button className="button-green button-next">Следующий уровень</button>
+      <button className={`button-next ${isCorrectAnswer ? 'button-green' : 'button-grey'}`}>
+        Следующий уровень
+      </button>
     </div>
   );
 };
