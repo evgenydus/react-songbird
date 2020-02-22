@@ -1,5 +1,4 @@
 .button-next {
-  background-color: #acb9bc;
   border-radius: 10px;
   border: 0;
   color: #fff;
@@ -10,6 +9,11 @@
   width: 100%;
 }
 
+.button-grey{
+  background-color: #acb9bc;
+}
+
 .button-green {
   background-color: #5fc696;
+  cursor: pointer;
 }
