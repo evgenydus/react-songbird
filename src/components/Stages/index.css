@@ -19,4 +19,11 @@
 
 .current-stage {
   background-color: #0D1362;
+  color: #fff;
+  cursor: default;
+  flex-basis: 100%;
+  font-size: 18px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
 }
