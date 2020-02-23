@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div className="app-container">
       <Header />
-      <Stages stages={stages} />
+      <Stages currentStageIndex={currentStageIndex} stages={stages} />
       <Question isStageCompleted={isStageCompleted} option={randomOption} />
       <Screen
         addId={addId}
