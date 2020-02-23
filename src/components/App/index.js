@@ -21,20 +21,24 @@ const App = () => {
     setSelectedOptionIds([...selectedOptionIds, id])
   };
 
-  const isCorrectAnswer = selectedOptionIds.includes(randomOption.id);
+  const isStageCompleted = selectedOptionIds.includes(randomOption.id);
 
   return (
     <div className="app-container">
       <Header />
       <Stages stages={stages} />
-      <Question isStageCompleted={isCorrectAnswer} option={randomOption} />
+      <Question isStageCompleted={isStageCompleted} option={randomOption} />
       <Screen
         addId={addId}
-        isCorrectAnswer={isCorrectAnswer}
+        correctAnswerId={randomOption.id}
+        isStageCompleted={isStageCompleted}
         options={stageOptions}
         selectedOptionIds={selectedOptionIds}
       />
-      <button className={`button-next ${isCorrectAnswer ? 'button-green' : 'button-grey'}`}>
+      <button
+        className="button-next button-green"
+        disabled={!isStageCompleted}
+      >
         Следующий уровень
       </button>
     </div>
