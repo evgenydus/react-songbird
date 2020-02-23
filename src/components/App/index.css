@@ -9,8 +9,9 @@
   width: 100%;
 }
 
-.button-grey{
+.button-next:disabled {
   background-color: #acb9bc;
+  cursor: default;
 }
 
 .button-green {
