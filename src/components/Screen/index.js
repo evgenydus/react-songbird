@@ -11,6 +11,8 @@ const Screen = ({
   isStageCompleted,
   options,
   selectedOptionIds,
+  setStageScore,
+  stageScore,
 }) => {
   const [selectedOptionId, setSelectedOptionId] = useState(null);
   const selectedOption = options.find(option => option.id === selectedOptionId);
@@ -24,6 +26,8 @@ const Screen = ({
         onOptionClick={setSelectedOptionId}
         options={options}
         selectedOptionIds={selectedOptionIds}
+        setStageScore={setStageScore}
+        stageScore={stageScore}
       />
       <Info selectedOption={selectedOption} />
     </div>

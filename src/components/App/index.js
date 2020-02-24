@@ -13,9 +13,12 @@ const currentStageIndex = 0;
 const stageOptions = stages[currentStageIndex].options;
 const randomOptionIndex = getRandomNumber(stageOptions.length - 1);
 const randomOption = stageOptions[randomOptionIndex];
+const defaultStageScore = 5;
 
 const App = () => {
   const [selectedOptionIds, setSelectedOptionIds] = useState([]);
+  const [stageScore, setStageScore] = useState(defaultStageScore);
+  const [currentScore, setCurrentScore] = useState(0);
 
   const addId = (id) => {
     setSelectedOptionIds([...selectedOptionIds, id])
@@ -23,9 +26,13 @@ const App = () => {
 
   const isStageCompleted = selectedOptionIds.includes(randomOption.id);
 
+  const handleNextLevelClick = () => {
+    setCurrentScore(currentScore => currentScore + stageScore);
+  };
+
   return (
     <div className="app-container">
-      <Header />
+      <Header currentScore={currentScore} />
       <Stages currentStageIndex={currentStageIndex} stages={stages} />
       <Question isStageCompleted={isStageCompleted} option={randomOption} />
       <Screen
@@ -34,10 +41,13 @@ const App = () => {
         isStageCompleted={isStageCompleted}
         options={stageOptions}
         selectedOptionIds={selectedOptionIds}
+        setStageScore={setStageScore}
+        stageScore={stageScore}
       />
       <button
         className="button-next button-green"
         disabled={!isStageCompleted}
+        onClick={handleNextLevelClick}
       >
         Следующий уровень
       </button>

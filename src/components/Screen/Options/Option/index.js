@@ -1,13 +1,26 @@
 import React, {useCallback} from 'react';
 import './index.css'
 
-const Option = ({ addId, id, isCorrectAnswer, isSelected, isStageCompleted, name, onClick }) => {
+const Option = ({
+  addId,
+  id,
+  isCorrectAnswer,
+  isSelected,
+  isStageCompleted,
+  name,
+  onClick,
+  setStageScore,
+  stageScore,
+}) => {
   const handleClick = useCallback(() => {
     onClick(id);
     if (!isStageCompleted) {
-      addId(id)
+      addId(id);
+      if (!isCorrectAnswer && !isSelected) {
+        setStageScore(stageScore - 1)
+      }
     }
-  }, [addId, id, isStageCompleted, onClick]);
+  }, [addId, id, isStageCompleted, onClick, isCorrectAnswer, stageScore, setStageScore]);
 
   let indicatorStyle = 'indicator-default';
 
