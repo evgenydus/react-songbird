@@ -12,7 +12,8 @@ const Options = ({
   options,
   selectedOptionIds,
   setStageScore,
-  stageScore
+  setTotalScore,
+  stageScore,
 }) => (
   <ul className="options">
     {options.map(({ id, name }) => (
@@ -26,6 +27,7 @@ const Options = ({
         name={name}
         onClick={onOptionClick}
         setStageScore={setStageScore}
+        setTotalScore={setTotalScore}
         stageScore={stageScore}
       />
     ))}

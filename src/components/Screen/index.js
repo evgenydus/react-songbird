@@ -12,6 +12,7 @@ const Screen = ({
   options,
   selectedOptionIds,
   setStageScore,
+  setTotalScore,
   stageScore,
 }) => {
   const [selectedOptionId, setSelectedOptionId] = useState(null);
@@ -27,6 +28,7 @@ const Screen = ({
         options={options}
         selectedOptionIds={selectedOptionIds}
         setStageScore={setStageScore}
+        setTotalScore={setTotalScore}
         stageScore={stageScore}
       />
       <Info selectedOption={selectedOption} />

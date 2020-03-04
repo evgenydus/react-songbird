@@ -10,6 +10,7 @@ const Option = ({
   name,
   onClick,
   setStageScore,
+  setTotalScore,
   stageScore,
 }) => {
   const handleClick = useCallback(() => {
@@ -17,10 +18,22 @@ const Option = ({
     if (!isStageCompleted) {
       addId(id);
       if (!isCorrectAnswer && !isSelected) {
-        setStageScore(stageScore - 1)
+        setStageScore(stageScore - 1);
+      } else {
+        setTotalScore(totalScore => totalScore + stageScore);
       }
     }
-  }, [addId, id, isStageCompleted, onClick, isCorrectAnswer, stageScore, setStageScore]);
+  }, [
+    addId,
+    id,
+    isCorrectAnswer,
+    isSelected,
+    isStageCompleted,
+    onClick,
+    setStageScore,
+    setTotalScore,
+    stageScore,
+  ]);
 
   let indicatorStyle = 'indicator-default';
 
