@@ -9,7 +9,7 @@ import './index.css';
 import stages from '../../birds-data';
 import { getRandomNumber } from '../../helpers/utils';
 
-const currentStageIndex = 0;
+let currentStageIndex = 0;
 const stageOptions = stages[currentStageIndex].options;
 const randomOptionIndex = getRandomNumber(stageOptions.length - 1);
 const randomOption = stageOptions[randomOptionIndex];
@@ -18,7 +18,7 @@ const defaultStageScore = 5;
 const App = () => {
   const [selectedOptionIds, setSelectedOptionIds] = useState([]);
   const [stageScore, setStageScore] = useState(defaultStageScore);
-  const [currentScore, setCurrentScore] = useState(0);
+  const [totalScore, setTotalScore] = useState(0);
 
   const addId = (id) => {
     setSelectedOptionIds([...selectedOptionIds, id])
@@ -27,12 +27,14 @@ const App = () => {
   const isStageCompleted = selectedOptionIds.includes(randomOption.id);
 
   const handleNextLevelClick = () => {
-    setCurrentScore(currentScore => currentScore + stageScore);
+    if (currentStageIndex < stages.length - 1) {
+      currentStageIndex += 1;
+    }
   };
 
   return (
     <div className="app-container">
-      <Header currentScore={currentScore} />
+      <Header totalScore={totalScore} />
       <Stages currentStageIndex={currentStageIndex} stages={stages} />
       <Question isStageCompleted={isStageCompleted} option={randomOption} />
       <Screen
@@ -42,6 +44,7 @@ const App = () => {
         options={stageOptions}
         selectedOptionIds={selectedOptionIds}
         setStageScore={setStageScore}
+        setTotalScore={setTotalScore}
         stageScore={stageScore}
       />
       <button
