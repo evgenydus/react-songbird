@@ -12,7 +12,7 @@ const Stages = ({ currentStageIndex, stages }) => {
             <li
               key={stage.title}
               className={index === currentStageIndex ? 'current-stage' : 'stage'}
-              // Is this the right way to add className?
+              // TODO: Is this the right way to add className?
             >
               {stage.title}
             </li>

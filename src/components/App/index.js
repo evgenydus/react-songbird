@@ -8,6 +8,7 @@ import Stages from '../Stages';
 import './index.css';
 import stages from '../../birds-data';
 import { getRandomNumber } from '../../helpers/utils';
+import Result from '../Result';
 
 const defaultStageIndex = 0;
 const defaultStageScore = 5;
@@ -24,18 +25,20 @@ const App = () => {
 
   const [stageScore, setStageScore] = useState(defaultStageScore);
   const [totalScore, setTotalScore] = useState(0);
+  const [isGameComplete, setIsGameComplete] = useState(false);
 
   const addId = (id) => {
     setSelectedOptionIds([...selectedOptionIds, id])
   };
 
+  const maxScore = defaultStageScore * stages.length;
   const isStageCompleted = selectedOptionIds.includes(randomOption.id);
 
   useEffect(() => {
     setStageOptions(stages[currentStageIndex].options);
     setRandomOptionIndex(getRandomNumber(stageOptions.length - 1));
     setRandomOption(stageOptions[randomOptionIndex]);
-  }, [currentStageIndex, stageOptions, randomOptionIndex]);
+  }, [currentStageIndex, stageOptions]);
 
   const handleNextLevelClick = () => {
     if (currentStageIndex < stages.length - 1) {
@@ -43,33 +46,58 @@ const App = () => {
       setSelectedOptionIds([]);
       setSelectedOptionId(null);
       setStageScore(defaultStageScore);
+    } else {
+      setIsGameComplete(true)
     }
+  };
+
+  const handlePlayAgainClick = () => {
+    setCurrentStageIndex(defaultStageIndex);
+    setSelectedOptionIds([]);
+    setSelectedOptionId(null);
+    setStageScore(defaultStageScore);
+    setTotalScore(0);
+    setIsGameComplete(false)
   };
 
   return (
     <div className="app-container">
       <Header totalScore={totalScore} />
       <Stages currentStageIndex={currentStageIndex} stages={stages} />
-      <Question isStageCompleted={isStageCompleted} option={randomOption} />
-      <Screen
-        addId={addId}
-        correctAnswerId={randomOption.id}
-        isStageCompleted={isStageCompleted}
-        options={stageOptions}
-        selectedOption={selectedOption}
-        selectedOptionIds={selectedOptionIds}
-        setSelectedOptionId={setSelectedOptionId}
-        setStageScore={setStageScore}
-        setTotalScore={setTotalScore}
-        stageScore={stageScore}
-      />
-      <button
-        className="button-next button-green"
-        disabled={!isStageCompleted}
-        onClick={handleNextLevelClick}
-      >
-        Следующий уровень
-      </button>
+      {isGameComplete ? (
+        <div>
+          <Result maxScore={maxScore} totalScore={totalScore}/>
+          <button
+            className="button play-again button-green"
+            onClick={handlePlayAgainClick}
+          >
+            Начать сначала
+          </button>
+        </div>
+      ) : (
+        <div>
+          <Question isStageCompleted={isStageCompleted} option={randomOption} />
+          <Screen
+            addId={addId}
+            correctAnswerId={randomOption.id}
+            isStageCompleted={isStageCompleted}
+            options={stageOptions}
+            selectedOption={selectedOption}
+            selectedOptionIds={selectedOptionIds}
+            setSelectedOptionId={setSelectedOptionId}
+            setStageScore={setStageScore}
+            setTotalScore={setTotalScore}
+            stageScore={stageScore}
+          />
+          <button
+            className="button button-next button-green"
+            disabled={!isStageCompleted}
+            onClick={handleNextLevelClick}
+          >
+            Следующий уровень
+          </button>
+        </div>
+      )}
     </div>
   );
 };
