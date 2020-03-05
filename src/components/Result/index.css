@@ -1,0 +1,18 @@
+.result {
+  background-color: #d8e0fe;
+  border-radius: 0 0 10px 10px;
+  padding-bottom: 150px;
+  padding-top: 150px;
+  text-align: center;
+}
+
+.result-title {
+  font-size: 70px;
+  margin: 0;
+}
+
+.result-text {
+  font-size: 30px;
+  margin: 30px auto 0;
+  max-width: 1000px;
+}

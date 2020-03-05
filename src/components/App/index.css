@@ -1,12 +1,15 @@
-.button-next {
+.button {
   border-radius: 10px;
   border: 0;
   color: #fff;
-  font-size: 18px;
   margin-top: 20px;
   padding-bottom: 10px;
   padding-top: 10px;
   width: 100%;
+}
+
+.button-next {
+  font-size: 18px;
 }
 
 .button-next:disabled {
@@ -17,4 +20,8 @@
 .button-green {
   background-color: #5fc696;
   cursor: pointer;
+}
+
+.play-again {
+  font-size: 28px;
 }
