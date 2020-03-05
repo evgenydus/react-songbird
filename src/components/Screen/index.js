@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Info from './Info';
 import Options from './Options';
@@ -10,13 +10,13 @@ const Screen = ({
   correctAnswerId,
   isStageCompleted,
   options,
+  selectedOption,
   selectedOptionIds,
+  setSelectedOptionId,
   setStageScore,
   setTotalScore,
   stageScore,
 }) => {
-  const [selectedOptionId, setSelectedOptionId] = useState(null);
-  const selectedOption = options.find(option => option.id === selectedOptionId);
 
   return (
     <div className="screen">
