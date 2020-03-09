@@ -7,7 +7,7 @@ import Stages from '../Stages';
 
 import './index.css';
 import stages from '../../birds-data';
-import { getRandomNumber } from '../../helpers/utils';
+import { getRandomNumber } from '../../helpers/helpers';
 import Result from '../Result';
 
 const defaultStageIndex = 0;
@@ -38,6 +38,7 @@ const App = () => {
     setStageOptions(stages[currentStageIndex].options);
     setRandomOptionIndex(getRandomNumber(stageOptions.length - 1));
     setRandomOption(stageOptions[randomOptionIndex]);
+    // eslint-disable-next-line
   }, [currentStageIndex, stageOptions]);
 
   const handleNextLevelClick = () => {

@@ -13,7 +13,7 @@ const Details = ({ isStageCompleted, option }) => {
         {isStageCompleted ? option.name : hiddenName}
       </div>
       <div className="details-player">
-        {<Player audioUrl={option.audioUrl}/>}
+        <Player audioUrl={option.audioUrl}/>
       </div>
     </div>
   )
