@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { PauseCircleFilled } from "@material-ui/icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPauseCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Pause = ({ handleClick }) => {
 
   return (
     <div className="player-button" onClick={() => handleClick()}>
-      <PauseCircleFilled />
+      <FontAwesomeIcon icon={faPauseCircle} />
     </div>
   )
 };

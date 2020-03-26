@@ -42,13 +42,13 @@ const App = () => {
   }, [currentStageIndex, stageOptions]);
 
   const handleNextLevelClick = () => {
-    if (currentStageIndex < stages.length - 1) {
+    if (currentStageIndex >= stages.length - 1) {
+      setIsGameComplete(true)
+    } else {
       setCurrentStageIndex(currentStageIndex + 1);
       setSelectedOptionIds([]);
       setSelectedOptionId(null);
       setStageScore(defaultStageScore);
-    } else {
-      setIsGameComplete(true)
     }
   };
 
@@ -69,7 +69,7 @@ const App = () => {
         <div>
           <Result maxScore={maxScore} totalScore={totalScore}/>
           <button
-            className="button play-again button-green"
+            className="button play-again"
             onClick={handlePlayAgainClick}
           >
             Начать сначала
@@ -91,7 +91,7 @@ const App = () => {
             stageScore={stageScore}
           />
           <button
-            className="button button-next button-green"
+            className="button button-next"
             disabled={!isStageCompleted}
             onClick={handleNextLevelClick}
           >
