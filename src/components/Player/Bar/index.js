@@ -1,32 +1,38 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import './index.css';
 
-const Bar = ({currentTime, duration, onTimeUpdate}) => {
+const Bar = ({ currentTime, duration, onTimeUpdate }) => {
   const currentPercentage = (currentTime / duration) * 100;
 
-  const calcClickedTime = (e) => {
-    const clickPositionInPage = e.pageX;
-    const bar = document.getElementById('bar-progress');
-    const barStart = bar.getBoundingClientRect().left + window.scrollX;
-    const barWidth = bar.offsetWidth;
-    const clickPositionInBar = clickPositionInPage - barStart;
-    const timePerPixel = duration / barWidth;
-    return timePerPixel * clickPositionInBar;
-  };
+  const handleTimeDrag = useCallback((event) => {
+      const calcClickedTime = (event) => {
+        const clickPositionInPage = event.pageX;
+        const bar = document.getElementById('bar-progress');
+        const barStart = bar.getBoundingClientRect().left + window.scrollX;
+        const barWidth = bar.offsetWidth;
+        const clickPositionInBar = clickPositionInPage - barStart;
+        const timePerPixel = duration / barWidth;
+        return timePerPixel * clickPositionInBar;
+      };
 
-  const handleTimeDrag = (e) => {
-    onTimeUpdate(calcClickedTime(e));
+      onTimeUpdate(calcClickedTime(event));
 
-    const updateTimeOnMove = eMove => {
-      onTimeUpdate(calcClickedTime(eMove));
-    };
+      const updateTimeOnMove = event => {
+        onTimeUpdate(calcClickedTime(event));
+      };
 
-    document.addEventListener('mousemove', updateTimeOnMove);
-    document.addEventListener('mouseup', () => {
-      document.removeEventListener('mousemove', updateTimeOnMove);
-    });
-  };
+      document.addEventListener('mousemove', updateTimeOnMove);
+      document.addEventListener('mouseup', () => {
+        document.removeEventListener('mousemove', updateTimeOnMove);
+      });
+
+      document.removeEventListener('mouseup', () => {
+        document.removeEventListener('mousemove', updateTimeOnMove);
+      });
+    },
+    [onTimeUpdate, duration],
+  );
 
   return (
     <div className="bar">
@@ -36,7 +42,7 @@ const Bar = ({currentTime, duration, onTimeUpdate}) => {
         style={{
           background: `linear-gradient(to right, #F2A960 ${currentPercentage}%, white 0)`
         }}
-        onMouseDown={e => handleTimeDrag(e)}
+        onMouseDown={handleTimeDrag}
       >
         <span
           className="knob"

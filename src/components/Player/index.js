@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './index.css'
 import Play from './Icons/Play';
 import Pause from './Icons/Pause';
@@ -36,20 +36,26 @@ const Player = ({ audioUrl }) => {
     }
   }, [isPlaying, clickedTime, currentDuration]);
 
+  const handleClickedTime = useCallback((time) => {
+      setClickedTime(time)
+    },
+    [setClickedTime],
+  );
+
   return (
     <div className="player-container">
       <audio id="audio">
         <source src={audioUrl}/>
       </audio>
       {isPlaying ? (
-        <Pause handleClick={() => setIsPlaying(false)}/>
+        <Pause onClick={() => setIsPlaying(false)}/>
       ) : (
-        <Play handleClick={() => setIsPlaying(true)}/>
+        <Play onClick={() => setIsPlaying(true)}/>
       )}
       <Bar
         currentTime={currentDuration}
         duration={duration}
-        onTimeUpdate={(time) => setClickedTime(time)}
+        onTimeUpdate={handleClickedTime}
       />
     </div>
   )

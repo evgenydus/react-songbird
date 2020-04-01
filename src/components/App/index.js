@@ -15,9 +15,15 @@ const defaultStageScore = 5;
 
 const App = () => {
   const [currentStageIndex, setCurrentStageIndex] = useState(defaultStageIndex);
-  const [stageOptions, setStageOptions] = useState(stages[currentStageIndex].options);
-  const [randomOptionIndex, setRandomOptionIndex] = useState(getRandomNumber(stageOptions.length - 1));
-  const [randomOption, setRandomOption] = useState(stageOptions[randomOptionIndex]);
+
+  const defaultStageOptions = stages[currentStageIndex].options;
+  const [stageOptions, setStageOptions] = useState(defaultStageOptions);
+
+  const defaultRandomOptionIndex = getRandomNumber(stageOptions.length - 1);
+  const [randomOptionIndex, setRandomOptionIndex] = useState(defaultRandomOptionIndex);
+
+  const defaultRandomOption = stageOptions[randomOptionIndex];
+  const [randomOption, setRandomOption] = useState(defaultRandomOption);
 
   const [selectedOptionId, setSelectedOptionId] = useState(null);
   const [selectedOptionIds, setSelectedOptionIds] = useState([]);
@@ -35,9 +41,9 @@ const App = () => {
   const isStageCompleted = selectedOptionIds.includes(randomOption.id);
 
   useEffect(() => {
-    setStageOptions(stages[currentStageIndex].options);
-    setRandomOptionIndex(getRandomNumber(stageOptions.length - 1));
-    setRandomOption(stageOptions[randomOptionIndex]);
+    setStageOptions(defaultStageOptions);
+    setRandomOptionIndex(defaultRandomOptionIndex);
+    setRandomOption(defaultRandomOption);
     // eslint-disable-next-line
   }, [currentStageIndex, stageOptions]);
 
@@ -66,7 +72,7 @@ const App = () => {
       <Header totalScore={totalScore} />
       <Stages currentStageIndex={currentStageIndex} stages={stages} />
       {isGameComplete ? (
-        <div>
+        <>
           <Result maxScore={maxScore} totalScore={totalScore}/>
           <button
             className="button play-again"
@@ -74,9 +80,9 @@ const App = () => {
           >
             Начать сначала
           </button>
-        </div>
+        </>
       ) : (
-        <div>
+        <>
           <Question isStageCompleted={isStageCompleted} option={randomOption} />
           <Screen
             addId={addId}
@@ -97,7 +103,7 @@ const App = () => {
           >
             Следующий уровень
           </button>
-        </div>
+        </>
       )}
     </div>
   );
