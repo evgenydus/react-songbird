@@ -3,11 +3,11 @@ import React from 'react';
 import logo from '../../assets/images/logo.png'
 import './index.css'
 
-const Header = () => {
+const Header = ({ totalScore }) => {
   return (
     <div className="header">
       <img className="logo" src={logo} alt="" />
-      <div className="score">Score: 60</div>
+      <div className="score">Score: {totalScore}</div>
     </div>
   )
 };

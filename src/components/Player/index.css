@@ -1,3 +1,30 @@
-.player {
+.player-container {
+  align-items: center;
+  display: flex;
   width: 100%;
+}
+
+.player-button {
+  cursor: pointer;
+}
+
+.player-button svg {
+  font-size: 60px;
+  color: #525ca1;
+}
+
+.player-button:hover svg {
+  color: #0D1362;
+}
+
+.timeline {
+  width: 85%;
+}
+
+.progress-bar {
+  background-color: #0D1362;
+  height: 4px;
+  transform: translateY(-10%);
+  transition: width 1s ease;
+  width: 1%;
 }
