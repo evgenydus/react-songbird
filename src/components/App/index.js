@@ -38,7 +38,7 @@ const App = () => {
     setStageOptions(stages[currentStageIndex].options);
     setRandomOptionIndex(getRandomNumber(stageOptions.length - 1));
     setRandomOption(stageOptions[randomOptionIndex]);
-  }, [currentStageIndex, stageOptions]);
+  }, [currentStageIndex, stageOptions, randomOptionIndex]);
 
   const handleNextLevelClick = () => {
     if (currentStageIndex < stages.length - 1) {
