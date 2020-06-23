@@ -7,7 +7,7 @@ const Header = ({ totalScore }) => {
   return (
     <div className="header">
       <img className="logo" src={logo} alt="" />
-      <div className="score">Score: {totalScore}</div>
+      <div className="score">Ваш счет: {totalScore}</div>
     </div>
   )
 };
